@@ -55,11 +55,29 @@
 	 		else
 	 			newNode.setNext(self.head)
 	 			self.head = newNode 
-
-
-
-
-
+	 	def insertAtEnd(self,data):
+	 		newNode = Node()
+	 		newNode.setData(data)
+	 		current = self.head 
+	 		while current.getNext() != None:
+	 			current = current.getNext()
+	 		current.setNext(newNode)
+	 	def insertAtPos(self,pos,data):
+	 		if pos > self.listlength() or pos < 0:
+	 			return None
+	 		else 
+	 			if pos == 0:
+	 				self.insertAtBegining(self,data)
+	 			else:
+	 				newNode = Node()
+	 				newNode.setData(data)
+	 				count = 0 
+	 				current = self.head
+	 				while current < pos:
+	 					count = count + 1 
+	 					current=current.getNext()
+	 				newNode.setNext(current.getNext())
+	 				current.setNext(newNode)
 
 
 
